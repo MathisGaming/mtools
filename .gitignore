@@ -45,3 +45,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+mtools/.vs/mtools/v14/.suo
+*.exe
+*.pdb
+mtools/mtools/Debug/main.obj
+*.obj
+mtools/mtools/Debug/vc140.idb
+*.tlog
+mtools/mtools/Debug/mtools.log
+*.opendb
