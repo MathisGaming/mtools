@@ -47,3 +47,7 @@ Temporary Items
 .apdisk
 /*.sdf
 ipch
+*.suo
+*.suo
+/Debug
+/Debug/mtools.exe

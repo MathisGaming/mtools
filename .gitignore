@@ -55,3 +55,5 @@ mtools/mtools/Debug/vc140.idb
 mtools/mtools/Debug/mtools.log
 *.opendb
 mtools/Debug/mtools.ilk
+mtools/.vs/mtools/v15/Browse.VC.db
+*.idb
