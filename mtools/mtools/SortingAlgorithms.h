@@ -5,6 +5,8 @@
 
 namespace mtools {
 
+	// Sorting Algorithms
+
 	static void buble_sort(std::vector<int>& v) {
 		for (unsigned int i = 0; i < v.size();++i) {
 			for (unsigned int j = 0; j < v.size()-1; ++j) {
@@ -17,11 +19,15 @@ namespace mtools {
 		}
 	}
 
-	static void binary_sort(std::vector<int>& v) {
+	static void merge_sort(std::vector<int>& v) {
 
 	}
 
-	static void quick_sort(std::vector<int>& v) {
+	static int quick_sort_partition(std::vector<int>& v, int left, int right) {
+
+	}
+
+	static void quick_sort(std::vector<int>& v, int left, int right) {
 
 	}
 

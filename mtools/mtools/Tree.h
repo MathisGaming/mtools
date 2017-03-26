@@ -110,44 +110,45 @@ namespace mtools
 		}
 		/*node<T>* remove(T key, node<T>* leaf)
 		{
-		if (leaf == NULL) return NULL;
+			if (leaf == NULL) return NULL;
 
-		if (key > leaf->left) return remove(key, leaf->right);
-		else if (key < leaf->right) return remove(key, leaf->left);
-		else
-		{
-		if (leaf->left == NULL && leaf->right == NULL) {
-		delete leaf;
-		leaf = NULL;
-		return true;
-		}
-		else if (leaf->left != NULL && leaf->right == NULL) {
-		node<T>* left = leaf->left;
-		leaf->key_value = left->key_value;
-		leaf->left = left->left;
-		leaf->right = left->right;
+			if (key > leaf->left) return remove(key, leaf->right);
+			else if (key < leaf->right) return remove(key, leaf->left);
+			else
+			{
+				//case one
+				if (leaf->left == NULL && leaf->right == NULL) {
+					delete leaf;
+					leaf = NULL;
+					return true;
+				}//case two
+				else if (leaf->left != NULL && leaf->right == NULL) {
+					node<T>* left = leaf->left;
+					leaf->key_value = left->key_value;
+					leaf->left = left->left;
+					leaf->right = left->right;
 
-		leaf->left = NULL;
-		delete left;
-		left = NULL;
-		return true;
-		}
-		else if (leaf->left == NULL && leaf->right != NULL) {
-		node<T>* right = leaf->right;
-		leaf->key_value = right->key_value;
-		leaf->left = right->left;
-		leaf->right = right->right;
+					leaf->left = NULL;
+					delete left;
+					left = NULL;
+					return true;
+				}//case two
+				else if (leaf->left == NULL && leaf->right != NULL) {
+					node<T>* right = leaf->right;
+					leaf->key_value = right->key_value;
+					leaf->left = right->left;
+					leaf->right = right->right;
 
-		leaf->right = NULL;
-		delete right;
-		right = NULL;
-		return true;
-		}
-		else
-		{
+					leaf->right = NULL;
+					delete right;
+					right = NULL;
+					return true;
+				}// case three : 2 child.
+				else
+				{
 
-		}
-		}
+				}
+			}
 		}*/
 		int get_height(TreeNode_t<T> *leaf)
 		{	
