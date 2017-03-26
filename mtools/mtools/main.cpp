@@ -76,7 +76,6 @@ void test_quick_Sort() {
 	double start = omp_get_wtime();
 	mtools::quick_sort(v,0,UNSORTED_ARRAY_SIZE-1);
 	double end = omp_get_wtime();
-	//display_array(v);
 	std::cout << "# Quick Sort - Ellapsed time is : " << end - start << std::endl;
 }
 
@@ -110,7 +109,7 @@ int main()
 {
 	test_trees();
 	//test_buble_sort();
-	//test_quick_Sort();
+	test_quick_Sort();
 	linked_list_test();
 	linked_list_node_test();
 
