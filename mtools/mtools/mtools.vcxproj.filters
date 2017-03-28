@@ -27,19 +27,19 @@
     <ClInclude Include="Vector.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Tree.h">
+    <ClInclude Include="DataStructures\Heap.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Heap.h">
+    <ClInclude Include="DataStructures\LinkedList.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Trie.h">
+    <ClInclude Include="DataStructures\Tree.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SortingAlgorithms.h">
+    <ClInclude Include="DataStructures\Trie.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="LinkedList.h">
+    <ClInclude Include="Algorithms\SortingAlgorithms.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

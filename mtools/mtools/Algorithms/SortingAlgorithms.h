@@ -7,7 +7,8 @@ namespace mtools {
 
 	// Sorting Algorithms
 
-	static void buble_sort(std::vector<int>& v) {
+	template<class T>
+	static void buble_sort(std::vector<T>& v) {
 		for (unsigned int i = 0; i < v.size();++i) {
 			for (unsigned int j = 0; j < v.size()-1; ++j) {
 				if (v[j] > v[j+1]) {
@@ -23,7 +24,8 @@ namespace mtools {
 
 	}
 
-	static int quick_sort_partition(std::vector<int>& v, int left, int right) {
+	template<typename T>
+	static int quick_sort_partition(std::vector<T>& v, int left, int right) {
 		int iPivot =  static_cast<int>(floor((right - left) / 2));
 		int pivot = v[right];
 		
@@ -53,7 +55,8 @@ namespace mtools {
 		return r;
 	}
 
-	static void quick_sort(std::vector<int>& v, int left, int right) {
+	template<typename T>
+	static void quick_sort(std::vector<T>& v, int left, int right) {
 		if (left < right) {
 			int p = quick_sort_partition(v, left, right);			
 			quick_sort(v, left, p - 1);
