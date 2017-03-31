@@ -20,7 +20,13 @@ namespace mtools {
 		}
 	}
 
-	static void merge_sort(std::vector<int>& v) {
+	template<typename T>
+	static void heap_Sort(std::vector<T>&) {
+
+	}
+
+	template<typename T>
+	static void merge_sort(std::vector<T>& v) {
 
 	}
 
@@ -29,10 +35,10 @@ namespace mtools {
 		int iPivot =  static_cast<int>(floor((right - left) / 2));
 		int pivot = v[right];
 		
-		int l = left - 1;
+		unsigned int l = left - 1;
 		if (l < 0) l = 0;
 		
-		int r = right + 1;
+		unsigned int r = right + 1;
 		if (r >= v.size()) r = v.size() - 1;
 		
 		while (1) {

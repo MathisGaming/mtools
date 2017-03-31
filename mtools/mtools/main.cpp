@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "tree.h"
+#include "Trie.h"
 #include "SortingAlgorithms.h"
 #include "LinkedList.h"
+#include "Singleton.h"
 
 #include <string.h>
 #include <iostream>
@@ -105,13 +107,27 @@ void linked_list_test()
 	delete linkedList;
 }
 
+void trie_test() {
+	mtools::CTrie* trie = new mtools::CTrie(LOWERCASE_SIZE);
+	trie->add_word("mathiss");
+	bool exist = trie->find_word("mathiss");
+	trie->add_word("pain");
+	trie->add_word("algorithm");
+	trie->add_word("attempt");
+	delete trie;
+}
+
 int main()
 {
 	test_trees();
 	//test_buble_sort();
-	test_quick_Sort();
+	//test_quick_Sort();
 	linked_list_test();
 	linked_list_node_test();
+	trie_test();
+
+	mtools::A::instance()->test();
+	mtools::A::destroy();
 
 	_CrtDumpMemoryLeaks();
     return 0;

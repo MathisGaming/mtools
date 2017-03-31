@@ -26,10 +26,12 @@ namespace mtools {
 	public:
 		CLinkedList() {
 			m_head = NULL;
+			m_size = 0;
 		}
 
 		CLinkedList(T data) {
 			m_head = new LinkedListNode_t<T>(data);
+			m_size = 1;
 		}
 
 		CLinkedList(const CLinkedList& list) {
@@ -40,7 +42,7 @@ namespace mtools {
 			delete_linked_list();
 		}
 
-		void push_back(T data) {
+		void push_back(T data) {			
 			if (m_head == NULL) {
 				m_head = new LinkedListNode_t<T>(data);
 			}
@@ -51,14 +53,16 @@ namespace mtools {
 				}
 				n->next = new LinkedListNode_t<T>(data);
 			}
+			++m_size;
 		}
 
-		LinkedListNode_t<T>* push_front(T data) {
+		LinkedListNode_t<T>* push_front(T data) {		
 			LinkedListNode_t<T>* n = new LinkedListNode_t<T>(data);
 			if (m_head != NULL) {
 				n->next = m_head;
 			}
 			m_head = n;
+			++m_size;
 			return m_head;
 		}
 
@@ -85,7 +89,7 @@ namespace mtools {
 			std::cout << "<- Tail\n";
 		}
 
-		void remove_node(T data) {
+		void remove_node(T data) {		
 			LinkedListNode_t<T>* prev = m_head;
 			LinkedListNode_t<T>* n = prev;
 			while (n->data != data) {
@@ -95,6 +99,7 @@ namespace mtools {
 			prev->next = n->next;
 			delete n;
 			n = NULL;
+			--m_size;
 		}
 
 		void delete_linked_list() {
@@ -105,16 +110,22 @@ namespace mtools {
 				delete n;
 			}
 			n = NULL;
+			m_size = 0;
 		}
 
 		LinkedListNode_t<T>* find(T data) {
 
 		}
 
+		const int get_size() {
+			return m_size;
+		}
+
 		// To do : Implement some operators ?
 
 	private:
 		LinkedListNode_t<T>* m_head;
+		unsigned int m_size;
 	};
 
 	/*
@@ -212,5 +223,4 @@ namespace mtools {
 	};
 
 #pragma endregion
-
 }

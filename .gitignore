@@ -59,3 +59,6 @@ mtools/.vs/mtools/v15/Browse.VC.db
 *.idb
 *.log
 mtools/mtools/Debug/main.nativecodeanalysis.xml
+*.iobj
+mtools/Release/mtools.ipdb
+*.ipdb
