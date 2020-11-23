@@ -62,3 +62,4 @@ mtools/mtools/Debug/main.nativecodeanalysis.xml
 *.iobj
 mtools/Release/mtools.ipdb
 *.ipdb
+mtools/x64/Debug/mtools.ilk
