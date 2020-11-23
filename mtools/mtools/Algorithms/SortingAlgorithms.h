@@ -9,8 +9,8 @@ namespace mtools {
 
 	template<class T>
 	static void buble_sort(std::vector<T>& v) {
-		for (unsigned int i = 0; i < v.size();++i) {
-			for (unsigned int j = 0; j < v.size()-1; ++j) {
+		for (size_t i = 0; i < v.size();++i) {
+			for (size_t j = 0; j < v.size()-1; ++j) {
 				if (v[j] > v[j+1]) {
 					int tmp = v[j+1];
 					v[j+1] = v[j];
@@ -31,14 +31,14 @@ namespace mtools {
 	}
 
 	template<typename T>
-	static int quick_sort_partition(std::vector<T>& v, int left, int right) {
+	static size_t quick_sort_partition(std::vector<T>& v, size_t left, size_t right) {
 		int iPivot =  static_cast<int>(floor((right - left) / 2));
 		int pivot = v[right];
 		
-		unsigned int l = left - 1;
+		size_t l = left - 1;
 		if (l < 0) l = 0;
 		
-		unsigned int r = right + 1;
+		size_t r = right + 1;
 		if (r >= v.size()) r = v.size() - 1;
 		
 		while (1) {
@@ -62,9 +62,9 @@ namespace mtools {
 	}
 
 	template<typename T>
-	static void quick_sort(std::vector<T>& v, int left, int right) {
+	static void quick_sort(std::vector<T>& v, size_t left, size_t right) {
 		if (left < right) {
-			int p = quick_sort_partition(v, left, right);			
+			size_t p = quick_sort_partition(v, left, right);			
 			quick_sort(v, left, p - 1);
 			quick_sort(v, p + 1, right);
 		}

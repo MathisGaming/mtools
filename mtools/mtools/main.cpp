@@ -58,8 +58,39 @@ void test_trees() {
 	myTree = NULL;
 }
 
-void display_array(std::vector<int>& v) {
-	for (auto i : v) {
+void test_trees2() {
+	mtools::CTree<int>* myTree = new mtools::CTree<int>();
+	myTree->insert(50);
+	myTree->insert(30);
+	myTree->insert(20);
+	myTree->insert(40);
+	myTree->insert(70);
+	myTree->insert(60);
+	myTree->insert(80);
+
+	std::cout << "Inorder traversal of the given tree \n";
+	myTree->display_in_order();
+
+	std::cout << "\nDelete 20\n";
+	myTree->remove(20);
+	std::cout << "Inorder traversal of the modified tree \n";
+	myTree->display_in_order();
+
+	std::cout << "\nDelete 30\n";
+	myTree->remove(30);
+	std::cout << "Inorder traversal of the modified tree \n";
+	myTree->display_in_order();
+
+	std::cout << "\nDelete 50\n";
+	myTree->remove(50);
+	std::cout << "Inorder traversal of the modified tree \n";
+	myTree->display_in_order();
+
+	delete myTree;
+}
+
+void display_array(const std::vector<int>& v) {
+	for (const auto & i : v) {
 		std::cout << i << " ";
 	}
 }
@@ -72,7 +103,7 @@ void test_buble_sort() {
 	std::cout << "# Bubble Sort - Ellapsed time is : " << end - start << std::endl;
 	
 }
-
+	
 void test_quick_Sort() {
 	std::vector<int> v(std::begin(UNSORTED_ARRAY), std::end(UNSORTED_ARRAY));
 	double start = omp_get_wtime();
@@ -120,6 +151,7 @@ void trie_test() {
 int main()
 {
 	test_trees();
+	test_trees2();
 	//test_buble_sort();
 	//test_quick_Sort();
 	linked_list_test();
