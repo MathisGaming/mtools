@@ -2,6 +2,7 @@
 #include "tree.h"
 #include "Trie.h"
 #include "SortingAlgorithms.h"
+#include "SearchingAlgorithms.h"
 #include "LinkedList.h"
 #include "Singleton.h"
 
@@ -148,6 +149,30 @@ void trie_test() {
 	delete trie;
 }
 
+void binary_search_test()
+{
+	std::vector<int> test_v = { 1,2,3,4,5,6,7,8,9,10 };
+	auto size = test_v.size() - 1;
+	bool result = mtools::binary_search(test_v, 0, size, 7);
+	std::cout << "binary_search_test for 7 result=" << std::to_string(result) << std::endl;
+	result = mtools::binary_search(test_v, 0, size, 11);
+	std::cout << "binary_search_test for 11 result=" << result << std::endl;
+	result = mtools::binary_search(test_v, 0, size, 2);
+	std::cout << "binary_search_test for 2 result=" << result << std::endl;
+}
+
+void binary_search_iterative_test()
+{
+	std::vector<int> test_v = { 1,2,3,4,5,6,7,8,9,10 };
+	auto size = test_v.size() - 1;
+	bool result = mtools::binary_search_iterative(test_v, 0, size, 7);
+	std::cout << "binary_search_iterative_test for 7 result=" << std::to_string(result) << std::endl;
+	result = mtools::binary_search_iterative(test_v, 0, size, 11);
+	std::cout << "binary_search_iterative_test for 11 result=" << result << std::endl;
+	result = mtools::binary_search_iterative(test_v, 0, size, 2);
+	std::cout << "binary_search_iterative_test for 2 result=" << result << std::endl;
+}
+
 int main()
 {
 	test_trees();
@@ -157,6 +182,8 @@ int main()
 	linked_list_test();
 	linked_list_node_test();
 	trie_test();
+	binary_search_test();
+	binary_search_iterative_test();
 
 	mtools::A::instance()->test();
 	mtools::A::destroy();
